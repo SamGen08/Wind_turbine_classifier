@@ -13,7 +13,7 @@ The model is a CNN trained from scratch. The goal was to understand the full pip
 
 ## Model Architecture
 
-
+```
 Input (3 × 128 × 128)
 |
 Conv2d(3 --> 16, 3×3) + ReLU + MaxPool --> (16 × 64 × 64)
@@ -25,7 +25,7 @@ Flatten --> 8192
 Linear(8192 --> 32) + ReLU
 |
 Linear(32 --> 2)
-
+```
 
 
 ## Dataset
@@ -36,16 +36,14 @@ Airbus Wind Turbines Patches — available on Kaggle:
 
 
 ## Training Details
-
-| Parameter | Value |
----------------------
-| Optimizer | Adam |
-| Learning rate | 0.0001 |
-| Loss function | CrossEntropyLoss |
-| Epochs | 20 |
-| Batch size | 32 |
-| Input size | 128 × 128 |
-
+```
+| Optimizer --> Adam |
+| Learning rate --> 0.0001 |
+| Loss function --> CrossEntropyLoss |
+| Epochs --> 20 |
+| Batch size --> 32 |
+| Input size --> 128 × 128 |
+```
   Data augmentation (train only):
 - Random horizontal and vertical flip
 - Random rotation (±90°)
@@ -60,20 +58,20 @@ Validation accuracy: 94.8%
 
 ## Requirements
 
-torch
-torchvision
+-torch
+-torchvision
 
 Install with:
 
-bash
+```bash
 pip install torch torchvision
-
+```
 
 
 ## Usage
 
 1. Download the dataset from Kaggle and organize it as:
-
+```
 Dataset/
 |
 |--Train/
@@ -83,14 +81,14 @@ Dataset/
 |--Validation/
    |--Turbine/
    |--No_Turbine/
-
+```
 2. Update the `train_path` and `val_path` variables in the script to point to your local paths 
 
 3. Run:
 
-bash
+```bash
 python wind_turbine_classifier.py
-
+```
 
 ## Notes
 
