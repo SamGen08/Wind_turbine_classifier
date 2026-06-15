@@ -105,6 +105,5 @@ with torch.no_grad():
     for i in range(len(outputs)):
       if outputs[i] != labels[i]:
         miss +=1
-    if miss%10 == 0:
 accuracy = (len(val_dataset)-miss)/len(val_dataset)*100
 print(accuracy)
